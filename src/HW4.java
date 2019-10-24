@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HW1 {
+public class HW4 {
     public static void main(String[] args) {
         /*
             숙제4. 아래와 같은 수열이 존재한다.
@@ -20,15 +20,16 @@ public class HW1 {
         int num2=1;
         int num3=3;
         int res=0;
+        int sum = 5;
 
         while(count-- > 0){
-            res = num1 + num3;  // 4 5
-            num1 = num2;          // 1
-            num2 = num3;          //3
-            num3 = res;         // 4
+            res = num1 + num3;  //   4 5
+            num1 = num2;          // 1 3
+            num2 = num3;          // 3 4
+            num3 = res;         //   4 5
+            sum += num3;         //   4
+            System.out.println("res: " + res);
+            System.out.println("sum: " + sum);
         }
-
-        System.out.println("res: " + res);
-
     }
 }
