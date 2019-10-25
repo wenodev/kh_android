@@ -19,6 +19,8 @@ public class HW6 {
             각각의 공간을 효육적으로 쓸 수 있도록 한다
             비트 연산을 사용하면 효율성이 극대화 됨
             편의상 공간의 개수는 10개로 진행하도록 한다)
+
+            커널이 메모리를 관리하는 메커니즘
          */
         final int SIZE = 100;
         Random random = new Random();
