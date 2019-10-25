@@ -1,5 +1,11 @@
 public class challenge1 {
     public static void main(String[] args) {
+
+        /*
+            중복되는 데이터가 많을 때는 소트를 먼저 하고 찾는것이 효율적
+            중복되는 데이터가 적을 때는 소트 보단 비교를 하는것이 효율적
+        */
+
         /*
             1,    5,    10,   10,   15,   150,  1500, 2300,
             2350, 2350, 2350, 2350, 2350, 2350, 2350, 2350,
@@ -12,13 +18,12 @@ public class challenge1 {
             몇 번 검출되었는지 확인하는 프로그램을 작성하시오.
          */
         int[] wirelessFreq = {
-                1,    3,    10,   5,   15,   150,  1500, 2300,
+                1,    5,    10,   10,   15,   150,  1500, 2300,
                 2350, 2350, 2350, 2350, 2350, 2350, 2350, 2350,
                 12342,123132,13123,54535,123123,23424,234234,123224,
                 43244,674654,23424,12356,123156,56777,644323,678908,
                 5000, 5000, 5000, 5000, 5000, 5000, 5000, 5000
         };
-
 
         int i,j,key;
         int len = wirelessFreq.length;
@@ -75,6 +80,40 @@ public class challenge1 {
         }
         System.out.println("중복 없는 원소의 개수 = " + nonRecursNum);
 
+        number = new int[nonRecursNum];
+        freqCheck = new int[nonRecursNum];
+        int nonRecursElem = 0;
+
+        for(i=0; i<len; i++){
+            for(j=0; j<i; j++){
+                if(wirelessFreq[i] == wirelessFreq[j]){
+                    break;
+                }
+            }
+
+            if( j==i){
+                number[nonRecursElem++] = wirelessFreq[i];
+            }
+        }
+
+        for(i=0; i<nonRecursElem; i++){
+            System.out.println("number[" + i + " ] = " + number[i]);
+        }
+
+
+
+        for(i=0 ;i<len; i++){
+            for(j=0; j<nonRecursElem; j++){
+                if(freqCheck[j] == wirelessFreq[i]){
+                    freqCheck[j]++;
+                    break;
+                }
+            }
+        }
+
+//        for(i=0; i<freqCheck.length; i++){
+//            System.out.println("freqCheck[" + i + "] = " + freqCheck[i]);
+//        }
 
 
     }
