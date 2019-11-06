@@ -11,8 +11,6 @@ class StaticCnt {
 
     public StaticCnt(){
         cnt  = new int[10];;
-        cnt[0]++;
-        System.out.println(cnt[0]);
     }
 }
 
